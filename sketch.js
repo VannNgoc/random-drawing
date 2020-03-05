@@ -15,7 +15,7 @@ function getRndInteger(min, max) {
 }
 
 function setup() {
-    createCanvas(1000, 1000)
+    createCanvas(windowWidth, windowHeight)
     frameRate(100)
     background(255)
     stroke(255)
