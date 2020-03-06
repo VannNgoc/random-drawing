@@ -23,7 +23,7 @@ function setup() {
     stroke(255)
     fill(0)
     createLoop(100)
-    strokeWeight(4)
+    strokeWeight(3)
     ampX = width/1.5
     ampY = height/1.5
     background(0)
@@ -57,11 +57,7 @@ function draw() {
 
 //Acts as an action handler
 function keyTyped() {
-  if (key === 'a') {
-    console.log('\'a\' was pressed');
-  } else if (key === 'b') {
-    console.log('\'b\' was pressed');
-  } else if (key == 'h'){
+  if (key == 'h'){
     window.alert(instructions[0] + instructions[1] + instructions[2] + instructions[3] + instructions[4] + instructions[5])
   } else if (key == 'p'){
     if(paused == false){
@@ -71,6 +67,13 @@ function keyTyped() {
     }
   }else if (key == 's'){
     save('myCanvas.jpg');
+  }else if (key == 'r'){
+    createCanvas(3000, 2400)
+    background(0)
+    seedX1 = Math.random()
+    seedY1 = Math.random()
+    seedX2 = Math.random()
+    seedY2 = Math.random()
   }
   // uncomment to prevent any default behavior
   // return false;
