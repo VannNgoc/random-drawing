@@ -30,7 +30,7 @@ function setup() {
     //Following handles the dialogue box for the direction when the program starts
     instructions = ["This is a random art generator:",
     "\nAuthor: Vannaroth Ngoc",
-    "\nPress 'R' on the keyboard to draw a rectangle",
+    "\nPress 'R' on the keyboard to restart and create new drawing",
     "\nPress 'P' on the keyboard to stop drawing. Press P again to resume",
     "\nPress 'S' on keyboard to save the the image.",
     "\nPress 'H' on the keyboard to show this window again"]
