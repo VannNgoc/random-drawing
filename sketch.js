@@ -9,13 +9,15 @@ let ampX
 let ampY
 let i = 0
 let randomStop = getRndInteger(2000,5000)
+let paused = false
 
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
 function setup() {
-    createCanvas(windowWidth, windowHeight)
+    // createCanvas(windowWidth, windowHeight)
+    createCanvas(3000, 2400)
     frameRate(100)
     background(255)
     stroke(255)
@@ -24,23 +26,55 @@ function setup() {
     ampX = width/1.5
     ampY = height/1.5
     background(0)
-    console.log(randomStop)
+    //Following handles the dialogue box for the direction when the program starts
+    instructions = ["This is a random art generator:",
+    "\nAuthor: Vannaroth Ngoc",
+    "\nPress 'R' on the keyboard to draw a rectangle",
+    "\nPress 'P' on the keyboard to stop drawing. Press P again to resume",
+    "\nPress 'S' on keyboard to save the the image.",
+    "\nPress 'H' on the keyboard to show this window again"]
+    window.alert(instructions[0] + instructions[1] + instructions[2] + instructions[3] + instructions[4] + instructions[5])
 }
 
 function draw() {
-
+  if(!paused){
     fill(animLoop.progress, 0.5, 1)
     translate(width/2,height/2)
-    
     const x1 = animLoop.noise({ radius: radX, seed: seedX1 }) * ampX
     const y1 = animLoop.noise({ radius: radY, seed: seedY1 }) * ampY
     const x2 = animLoop.noise({ radius: radX, seed: seedX2 }) * ampX
     const y2 = animLoop.noise({ radius: radY, seed: seedY2 }) * ampY
     stroke(255)
-    //rect(x1,y1,100,100);
     i++
+    //Will draw a line every 10
     if(i % 10 == 0){ 
-    stroke(200)
-    line(x1,y1,x2,y2)
+      stroke(200)
+      line(x1,y1,x2,y2)
     }
+  }
+}
+
+//Acts as an action handler
+function keyTyped() {
+  if (key === 'a') {
+    console.log('\'a\' was pressed');
+  } else if (key === 'b') {
+    console.log('\'b\' was pressed');
+  } else if (key == 'h'){
+    window.alert(instructions[0] + instructions[1] + instructions[2] + instructions[3] + instructions[4] + instructions[5])
+  } else if (key == 'p'){
+    if(paused == false){
+      paused = true
+    }else{
+      paused = false
+    }
+  }else if (key == 's'){
+    save('myCanvas.jpg');
+  }
+  // uncomment to prevent any default behavior
+  // return false;
+}
+
+function reverse(){
+
 }
