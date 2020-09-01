@@ -17,7 +17,7 @@ function getRndInteger(min, max) {
 
 function setup() {
     // createCanvas(windowWidth, windowHeight)
-    createCanvas(3000, 2400)
+    createCanvas(windowWidth, windowHeight)
     frameRate(100)
     background(255)
     stroke(255)
@@ -34,7 +34,7 @@ function setup() {
     "\nPress 'P' on the keyboard to stop drawing. Press P again to resume",
     "\nPress 'S' on keyboard to save the the image.",
     "\nPress 'H' on the keyboard to show this window again"]
-    window.alert(instructions[0] + instructions[1] + instructions[2] + instructions[3] + instructions[4] + instructions[5])
+    //window.alert(instructions[0] + instructions[1] + instructions[2] + instructions[3] + instructions[4] + instructions[5])
 }
 
 function draw() {
