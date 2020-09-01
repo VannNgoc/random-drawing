@@ -23,7 +23,6 @@ function setup() {
     stroke(255)
     fill(0)
     createLoop(100)
-    strokeWeight(3)
     ampX = width/1.5
     ampY = height/1.5
     background(0)
